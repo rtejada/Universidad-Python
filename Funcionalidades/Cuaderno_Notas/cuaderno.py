@@ -16,26 +16,24 @@ class Cuaderno:
 
     def modificar_memo(self, nota_id, memo):
         '''Encuentra la nota con la id dada y cambia
-            su memo al valor dado.
-
-        for nota in self.notas:
-            if nota.id == nota_id:
-                nota.memo = memo
-                break
-        '''
-        self._encontrar_nota(nota_id).memo = memo
+            su memo al valor dado.'''
+        nota = self._encontrar_nota(nota_id)
+        if nota:
+            nota.memo = memo
+            return True
+        return False
 
     def modificar_tags(self, nota_id, tags):
         '''Encuentra la nota con la id dada y cambia
-            sus tags al valor dado
+            sus tags al valor dado'''
 
-        for nota in self.notas:
-            if nota.id == nota_id:
-                nota.tags = tags
-                break
-        '''
+        nota = self._encontrar_nota(nota_id)
+        if nota:
+            nota.tags = tags
+            return True
+        return False
 
-        self._encontrar_nota(nota_id).tags = tags
+        #self._encontrar_nota(nota_id).tags = tags
 
     def search(self, filter):
         '''Encuentra todas las notas que concuerdan con el
@@ -47,12 +45,12 @@ class Cuaderno:
         '''Localiza la nota con la id dada.'''
 
         for nota in self.notas:
-            if nota.id == nota_id:
+            if str(nota.id) == str(nota_id):
                 return nota
 
         return None
 
-
+'''
 c = Cuaderno()
 
 c.nueva_nota('Primera Nota')
@@ -64,7 +62,7 @@ print(c.notas[0].memo)
 print(c.notas[1].memo)
 print(c.search('Nota'))
 print(c.modificar_memo(1, 'Tercera Nota'))
-print(c.notas[0].memo)
+print(c.notas[0].memo)'''
 
 
 
