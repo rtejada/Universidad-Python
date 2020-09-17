@@ -10,11 +10,10 @@ port = os.getenv('PORT')
 database = os.getenv('DATABASE')
 
 conexion = db.connect(user=user,
-                            password=password,
-                            host=host,
-                            port=port,
-                            database=database)
-
+                      password=password,
+                      host=host,
+                      port=port,
+                      database=database)
 
 cursor = conexion.cursor()
 sql = 'SELECT * FROM persona ORDER BY id_persona'

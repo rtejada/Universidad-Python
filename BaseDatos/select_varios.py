@@ -1,10 +1,10 @@
 import psycopg2
 
 conexion = psycopg2.connect(user='postgres',
-                 password='roxana',
-                 host='127.0.0.1',
-                 port='5432',
-                 database='test_db')
+                            password='roxana',
+                            host='127.0.0.1',
+                            port='5432',
+                            database='test_db')
 
 cursor = conexion.cursor()
 sql = 'SELECT * FROM persona WHERE id_persona IN %s'
