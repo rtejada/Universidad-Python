@@ -351,6 +351,8 @@ MigrationBackup/
 
 .pdf
 .txt
+.temp
+Universidad-Python/.env.conection_postgresql
 
 .idea/
 .idea
